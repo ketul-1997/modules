@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<flectra>
+    <data>
+        <record id="company_view_info_form" model="ir.ui.view">
+            <field name="name">job info form view</field>
+            <field name="model">job.info</field>
+            <field name="arch" type="xml">
+                <form string="job Information">
+                    <group>
+                        <field name="name"/>
+                        <field name="job_type"/>
+                        <field name="company_id"/>
+                        <field name="jobseeker"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+            <record id="job_info_list_view" model="ir.ui.view">
+            <field name="name">job information list view</field>
+            <field name="model">job.info</field>
+            <field name="arch" type="xml">
+                <tree string="job information">
+                        <field name="name"/>
+                        <field name="job_type"/>
+                        <field name="company_id"/>
+                        <field name="jobseeker"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="job_info_search_view" model="ir.ui.view">
+            <field name="name">job information search view</field>
+            <field name="model">job.info</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+
+
+
+        <record id="action_job_information" model="ir.actions.act_window">
+            <field name="name">job</field>
+            <field name="res_model">job.info</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,search</field>
+        </record>
+
+
+
+        <menuitem id="job_info" name="job" action="action_job_information"
+                  parent="company_info_config"/>
+    </data>
+</flectra>

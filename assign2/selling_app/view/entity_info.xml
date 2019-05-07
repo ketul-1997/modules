@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<flectra>
+    <data>
+        <record id="buyer_info_view" model="ir.ui.view">
+            <field name="name">entity info form view</field>
+            <field name="model">entity.information</field>
+            <field name="arch" type="xml">
+                <form string="enter Information">
+                    <group>
+                        <field name="name"/>
+                        <field name="type"/>
+                        <field name="entity"/>
+                        <field name="manufacture_date"/>
+                        <field name="seller_ids"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="entity_info_list_view" model="ir.ui.view">
+            <field name="name">entity information list view</field>
+            <field name="model">entity.information</field>
+            <field name="arch" type="xml">
+                <tree string="entiy information">
+                    <field name="name"/>
+                    <field name="type"/>
+                    <field name="entity"/>
+                    <field name="manufacture_date"/>
+                    <field name="seller_ids"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="entity_info_search_view" model="ir.ui.view">
+            <field name="name">entity information search view</field>
+            <field name="model">entity.information</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_entity_information" model="ir.actions.act_window">
+            <field name="name">entity</field>
+            <field name="res_model">entity.information</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,search</field>
+        </record>
+
+        <menuitem id="entity_menu" name="entity" action="action_entity_information"
+                  parent="seller_info_config"/>
+    </data>
+</flectra>

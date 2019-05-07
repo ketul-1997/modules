@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<flectra>
+    <data>
+        <record id="buyer_info_view_form" model="ir.ui.view">
+            <field name="name">buyer.info.form.view</field>
+            <field name="model">buyer.information</field>
+            <field name="arch" type="xml">
+                <form string="buyer Information">
+                    <header>
+	                    <button string="success" type="object" name="s_success" widget="statusbar" class="oe_highlight"/>
+	                    <button string="pending" type="object" name="s_pending" widget="statusbar" class="oe_highlight"/>
+	                    <button string="cancel" type="object" name="s_cancel" widget="statusbar" class="oe_highlight"/>
+	                    <field name="state" widget="statusbar"/>
+                    </header>
+                    <group>
+                        <field name="name"/>
+                        <field name="buying_type"/>
+                        <field name="mobile_nos"/>
+                        <field name="range"/>
+                        <field name="seller_id"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="buyer_info_list_view" model="ir.ui.view">
+            <field name="name">buyer information list view</field>
+            <field name="model">buyer.information</field>
+            <field name="arch" type="xml">
+                <tree string="buyer information">
+                    <field name="name"/>
+                    <field name="buying_type"/>
+                    <field name="mobile_nos"/>
+                    <field name="range"/>
+                    <field name="seller_id"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="buyer_info_search_view" model="ir.ui.view">
+            <field name="name">buyer information search view</field>
+            <field name="model">buyer.information</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_buyers_information" model="ir.actions.act_window">
+            <field name="name">Buyer Information</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">buyer.information</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="buyer_menu" name="buyer" action="action_buyers_information"
+                  parent="seller_info_config"/>
+    </data>
+</flectra>

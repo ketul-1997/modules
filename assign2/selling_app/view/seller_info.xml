@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<flectra>
+    <data>
+        <record id="seller_info_view" model="ir.ui.view">
+            <field name="name">seller info form view</field>
+            <field name="model">seller.info</field>
+            <field name="arch" type="xml">
+                <form string="seller Information">
+                    <group>
+                        <field name="name"/>
+                        <field name="selling_type"/>
+                        <field name="mobile_no"/>
+                        <field name="expected_amount"/>
+                        <field name="buyer_id"/>
+                        <field name="entity_ids"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+            <record id="seller_info_list_view" model="ir.ui.view">
+            <field name="name">seller information list view</field>
+            <field name="model">seller.info</field>
+            <field name="arch" type="xml">
+                <tree string="seller information">
+                        <field name="name"/>
+                        <field name="selling_type"/>
+                        <field name="mobile_no"/>
+                        <field name="expected_amount"/>
+                        <field name="buyer_id"/>
+                        <field name="entity_ids"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="seller_info_search_view" model="ir.ui.view">
+            <field name="name">seller information search view</field>
+            <field name="model">seller.info</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+
+
+
+        <record id="action_seller_information" model="ir.actions.act_window">
+            <field name="name">seller</field>
+            <field name="res_model">seller.info</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,search</field>
+        </record>
+
+
+        <menuitem id="seller_info_root" name="seller_info"/>
+        <menuitem id="seller_info_config" name="seller_information" parent="seller_info_root"/>
+        <menuitem id="seller_info_many" name="Seller" action="action_seller_information"
+                  parent="seller_info_config"/>
+    </data>
+</flectra>

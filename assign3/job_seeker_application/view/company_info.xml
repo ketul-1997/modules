@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<flectra>
+    <data>
+        <record id="company_info_view_form" model="ir.ui.view">
+            <field name="name">company info form view</field>
+            <field name="model">company.information</field>
+            <field name="arch" type="xml">
+                <form string="company Information">
+                    <group>
+                        <field name="name"/>
+                        <field name="post_id"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+            <record id="company_info_list_view" model="ir.ui.view">
+            <field name="name">company information list view</field>
+            <field name="model">company.information</field>
+            <field name="arch" type="xml">
+                <tree string="company information">
+                        <field name="name"/>
+                        <field name="post_id"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="company_info_search_view" model="ir.ui.view">
+            <field name="name">company information search view</field>
+            <field name="model">company.information</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+
+
+
+        <record id="action_company_information" model="ir.actions.act_window">
+            <field name="name">company</field>
+            <field name="res_model">company.information</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,search</field>
+        </record>
+
+
+        <menuitem id="company_info_root" name="company_info"/>
+        <menuitem id="company_info_config" name="company_information" parent="company_info_root"/>
+        <menuitem id="company_info_many" name="company" action="action_company_information"
+                  parent="company_info_config"/>
+    </data>
+</flectra>
